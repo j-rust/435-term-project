@@ -69,8 +69,8 @@ public class App
 
 
         Configuration novaFFConf = new Configuration();
-        novaFFConf.set("start_time", "Mon Apr 04 16:05:00 MDT 2016");
-        novaFFConf.set("end_time", "Mon Apr 04 18:10:00 MDT 2016");
+        novaFFConf.set("start_time", "Sat Apr 02 16:05:00 MDT 2016");
+        novaFFConf.set("end_time", "Sat Apr 02 18:10:00 MDT 2016");
         novaFFConf.set("keywords", "NovaMBB, Villanova, Nova, Arcidiacono, Jenkins, Ochefu, Wildcats, Hart");
 
         Job novaFF = Job.getInstance(novaFFConf, "main");
@@ -91,10 +91,11 @@ public class App
 
         novaFF.waitForCompletion(true);
 
+
         Configuration ouFFConf = new Configuration();
-        novaFFConf.set("start_time", "Mon Apr 04 16:05:00 MDT 2016");
-        novaFFConf.set("end_time", "Mon Apr 04 18:10:00 MDT 2016");
-        novaFFConf.set("keywords", "OU_MBBall, Sooners, Boomer, #OU, Sooner, Oklahoma, Buddy, Hield, Spangler");
+        ouFFConf.set("start_time", "Sat Apr 02 16:05:00 MDT 2016");
+        ouFFConf.set("end_time", "Sat Apr 02 18:10:00 MDT 2016");
+        ouFFConf.set("keywords", "OU_MBBall, Sooners, Boomer, #OU, Sooner, Oklahoma, Buddy, Hield, Spangler");
 
         Job ouFF = Job.getInstance(ouFFConf, "main");
 
@@ -109,10 +110,10 @@ public class App
         ouFF.setCombinerClass(Reduce.class);
         ouFF.setReducerClass(Reduce.class);
 
-        FileInputFormat.setInputPaths(novaFF, new Path(inputPath + "final_four.txt"));
-        FileOutputFormat.setOutputPath(novaFF, new Path(outPath + "ouFinalFour"));
+        FileInputFormat.setInputPaths(ouFF, new Path(inputPath + "final_four.txt"));
+        FileOutputFormat.setOutputPath(ouFF, new Path(outPath + "ouFinalFour"));
 
-        novaFF.waitForCompletion(true);
+        ouFF.waitForCompletion(true);
 
 
         /* Processing for championship game */
@@ -160,7 +161,6 @@ public class App
         FileOutputFormat.setOutputPath(novaChampionship, new Path(outPath + "novaChampionship"));
 
         novaChampionship.waitForCompletion(true);
-
 
     }
 }
