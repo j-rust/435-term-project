@@ -7,6 +7,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.jfree.ui.RefineryUtilities;
 
 
 /**
@@ -17,12 +18,19 @@ public class App
 {
     public static void main( String[] args ) throws Exception {
 
+
+        LineChart demo = new LineChart("Villanova Championship");
+        demo.pack();
+        RefineryUtilities.centerFrameOnScreen(demo);
+        demo.setVisible(true);
+        /*
         String inputPath = args[0];
         if(inputPath.charAt(inputPath.length() - 1) != '/') inputPath += "/";
         String outPath = args[1];
         if(outPath.charAt(outPath.length()-1) != '/') outPath += "/";
 
-        /* Processing for final four games */
+        */
+        /* Processing for final four games
         Configuration uncFFConf = new Configuration();
         uncFFConf.set("start_time", "Sat Apr 02 18:45:00 MDT 2016");
         uncFFConf.set("end_time", "Sat Apr 02 20:50:00 MDT 2016");
@@ -115,8 +123,9 @@ public class App
 
         ouFF.waitForCompletion(true);
 
+        */
 
-        /* Processing for championship game */
+        /* Processing for championship game
         Configuration uncChampionshipConf = new Configuration();
         uncChampionshipConf.set("start_time", "Mon Apr 04 19:15:00 MDT 2016");
         uncChampionshipConf.set("end_time", "Mon Apr 04 21:30:00 MDT 2016");
@@ -162,5 +171,6 @@ public class App
 
         novaChampionship.waitForCompletion(true);
 
+        */
     }
 }
