@@ -19,10 +19,20 @@ public class App
     public static void main( String[] args ) throws Exception {
 
 
-        LineChart demo = new LineChart("Villanova Championship");
-        demo.pack();
-        RefineryUtilities.centerFrameOnScreen(demo);
-        demo.setVisible(true);
+        LineChart championship = new LineChart("Championship", "novaChampionship.txt", "Nova", "uncChampionship.txt", "UNC");
+        championship.pack();
+        RefineryUtilities.centerFrameOnScreen(championship);
+        championship.setVisible(true);
+
+        LineChart ff1 = new LineChart("Nova-OU Final Four", "novaFF.txt", "Nova", "ouFF.txt", "OU");
+        ff1.pack();
+        RefineryUtilities.centerFrameOnScreen(ff1);
+        ff1.setVisible(true);
+
+        LineChart ff2 = new LineChart("Cuse-UNC Final Four", "cuseFF.txt", "Syracuse", "uncFF.txt", "UNC");
+        ff2.pack();
+        RefineryUtilities.centerFrameOnScreen(ff2);
+        ff2.setVisible(true);
         /*
         String inputPath = args[0];
         if(inputPath.charAt(inputPath.length() - 1) != '/') inputPath += "/";
