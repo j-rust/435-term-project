@@ -19,28 +19,13 @@ public class App
     public static void main( String[] args ) throws Exception {
 
 
-        LineChart championship = new LineChart("Championship", "novaChampionship.txt", "Nova", "uncChampionship.txt", "UNC");
-        championship.pack();
-        RefineryUtilities.centerFrameOnScreen(championship);
-        championship.setVisible(true);
-
-        LineChart ff1 = new LineChart("Nova-OU Final Four", "novaFF.txt", "Nova", "ouFF.txt", "OU");
-        ff1.pack();
-        RefineryUtilities.centerFrameOnScreen(ff1);
-        ff1.setVisible(true);
-
-        LineChart ff2 = new LineChart("Cuse-UNC Final Four", "cuseFF.txt", "Syracuse", "uncFF.txt", "UNC");
-        ff2.pack();
-        RefineryUtilities.centerFrameOnScreen(ff2);
-        ff2.setVisible(true);
-        /*
         String inputPath = args[0];
         if(inputPath.charAt(inputPath.length() - 1) != '/') inputPath += "/";
         String outPath = args[1];
         if(outPath.charAt(outPath.length()-1) != '/') outPath += "/";
 
-        */
-        /* Processing for final four games
+
+        /* Processing for final four games */
         Configuration uncFFConf = new Configuration();
         uncFFConf.set("start_time", "Sat Apr 02 18:45:00 MDT 2016");
         uncFFConf.set("end_time", "Sat Apr 02 20:50:00 MDT 2016");
@@ -133,9 +118,9 @@ public class App
 
         ouFF.waitForCompletion(true);
 
-        */
 
-        /* Processing for championship game
+
+        /* Processing for championship game */
         Configuration uncChampionshipConf = new Configuration();
         uncChampionshipConf.set("start_time", "Mon Apr 04 19:15:00 MDT 2016");
         uncChampionshipConf.set("end_time", "Mon Apr 04 21:30:00 MDT 2016");
@@ -181,6 +166,5 @@ public class App
 
         novaChampionship.waitForCompletion(true);
 
-        */
     }
 }

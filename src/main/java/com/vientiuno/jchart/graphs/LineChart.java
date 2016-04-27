@@ -1,4 +1,4 @@
-package com.vientiuno.term.project;
+package com.vientiuno.jchart.graphs;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
