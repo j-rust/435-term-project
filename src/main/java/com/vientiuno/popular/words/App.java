@@ -33,7 +33,7 @@ public class App
         ff1.setJarByClass(App.class);
 
         ff1.setOutputKeyClass(Text.class);
-        ff1.setOutputValueClass(IntWritable.class);
+        ff1.setOutputValueClass(Text.class);
 
         ff1.setMapperClass(WordCountMap.class);
         ff1.setReducerClass(WordCountReduce.class);
@@ -50,12 +50,12 @@ public class App
 
         Job ff2 = Job.getInstance(ff2Conf, "main");
 
-        ff2.setJobName("Villanova Final Four");
+        ff2.setJobName("Final Four Game 2");
 
         ff2.setJarByClass(App.class);
 
         ff2.setOutputKeyClass(Text.class);
-        ff2.setOutputValueClass(IntWritable.class);
+        ff2.setOutputValueClass(Text.class);
 
         ff2.setMapperClass(WordCountMap.class);
         ff2.setReducerClass(WordCountReduce.class);
@@ -77,13 +77,15 @@ public class App
         championship.setJarByClass(App.class);
 
         championship.setOutputKeyClass(Text.class);
-        championship.setOutputValueClass(IntWritable.class);
+        championship.setOutputValueClass(Text.class);
 
         championship.setMapperClass(WordCountMap.class);
         championship.setReducerClass(WordCountReduce.class);
 
         FileInputFormat.setInputPaths(championship, new Path(inputPath + "championship.txt"));
         FileOutputFormat.setOutputPath(championship, new Path(outPath + "championship"));
+
+        championship.waitForCompletion(true);
 
     }
 }
