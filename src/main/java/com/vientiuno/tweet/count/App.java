@@ -7,6 +7,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.jfree.ui.RefineryUtilities;
 
 
 /**
@@ -17,10 +18,12 @@ public class App
 {
     public static void main( String[] args ) throws Exception {
 
+
         String inputPath = args[0];
         if(inputPath.charAt(inputPath.length() - 1) != '/') inputPath += "/";
         String outPath = args[1];
         if(outPath.charAt(outPath.length()-1) != '/') outPath += "/";
+
 
         /* Processing for final four games */
         Configuration uncFFConf = new Configuration();
@@ -114,6 +117,7 @@ public class App
         FileOutputFormat.setOutputPath(ouFF, new Path(outPath + "ouFinalFour"));
 
         ouFF.waitForCompletion(true);
+
 
 
         /* Processing for championship game */
