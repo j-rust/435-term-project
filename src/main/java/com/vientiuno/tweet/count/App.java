@@ -1,4 +1,4 @@
-package com.vientiuno.term.project;
+package com.vientiuno.tweet.count;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 
 /**
- * Application Driver
+ * Tweets/Minute Application Driver
  *
  */
 public class App 

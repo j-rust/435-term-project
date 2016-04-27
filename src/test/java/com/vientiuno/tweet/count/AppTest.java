@@ -1,4 +1,4 @@
-package com.vientiuno.term.project;
+package com.vientiuno.tweet.count;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

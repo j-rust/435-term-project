@@ -1,4 +1,4 @@
-package com.vientiuno.term.project;
+package com.vientiuno.tweet.count;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
