@@ -1,4 +1,4 @@
-package com.vientiuno.term.project;
+package com.vientiuno.popular.words;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
